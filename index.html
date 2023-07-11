@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu 22.04 - GANDEL DEV</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/mainScreen.css">
+    <link rel="shortcut icon" href="/assets/favicon/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="off-screen"></div>
+    <div class="lock-screen one"></div>
+    <div class="lock-screen two"></div>
+    <div class="users-screen"></div>
+    <div class="on-screen active">
+        <div class="top-panel">
+            <div class="left-components-section">
+                <button class="activities-button">
+                    Activities
+                </button>
+                <button class="current-app-button">
+                    <p class="logo-current-app">
+                        <i class="fa-solid fa-shapes" style="color: #ffffff;"></i>
+                    </p>
+                    <p class="name-current-app">
+                        App name
+                    </p>
+                </button>
+            </div>
+            <div class="central-components-section">
+                <button class="notifications-panel-button">
+                    <p class="date-current">11 de jul</p>
+                    <p class="hour-current">11:29</p>
+                </button>
+            </div>
+            <div class="right-components-section">
+                <button class="setting-button">
+                    <i class="fa-solid fa-network-wired" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-volume-high" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-power-off" style="color: #ffffff;"></i>
+                </button>
+            </div>
+        </div>
+        <div class="screen-container"></div>
+        <div class="menu-bar">
+            <div class="favorite-apps-section"></div>
+            <span class="wall-icons"></span>
+            <button class="trash-button app-button">
+                <img src="/assets/icons/trash.png" alt="TRASH ICON" draggable="false">
+            </button>
+            <button class="show-applications-button app-button">
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+                <span class="square-menu"></span>
+            </button>
+        </div>
+    </div>
+
+    <!--SCRIPTS-->
+    <script src="https://kit.fontawesome.com/29c1e4f1ef.js" crossorigin="anonymous"></script>
+    <script src="/js/menuBar.js"></script>
+    <script src="/js/CurrentDate.js"></script>
+    <script>
+        let defaultApps = ["files", "terminal", "text-editor", "ubuntu-software", "settings", "brave"]
+        let menubar = new MenuBar()
+        for (let index = 0; index < defaultApps.length; index++) {
+            menubar.createApps(defaultApps[index])
+        }
+        menubar.addApp()
+        let currentDate = new CurrentDate();
+    </script>
+</body>
+
+</html>
