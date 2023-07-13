@@ -11,39 +11,68 @@
 </head>
 
 <body>
-    <div class="off-screen"></div>
-    <div class="lock-screen one"></div>
-    <div class="lock-screen two"></div>
-    <div class="users-screen"></div>
-    <div class="on-screen active">
-        <div class="top-panel">
-            <div class="left-components-section">
-                <button class="activities-button">
-                    Activities
-                </button>
-                <button class="current-app-button">
-                    <p class="logo-current-app">
-                        <i class="fa-solid fa-shapes" style="color: #ffffff;"></i>
-                    </p>
-                    <p class="name-current-app">
-                        App name
-                    </p>
-                </button>
-            </div>
-            <div class="central-components-section">
-                <button class="notifications-panel-button">
-                    <p class="date-current">11 de jul</p>
-                    <p class="hour-current">11:29</p>
-                </button>
-            </div>
-            <div class="right-components-section">
-                <button class="setting-button">
-                    <i class="fa-solid fa-network-wired" style="color: #ffffff;"></i>
-                    <i class="fa-solid fa-volume-high" style="color: #ffffff;"></i>
-                    <i class="fa-solid fa-power-off" style="color: #ffffff;"></i>
-                </button>
+    <div class="disabled-screen"></div>
+
+    <div class="top-panel">
+        <div class="left-components-section">
+            <button class="activities-button">
+                Activities
+            </button>
+            <button class="current-app-button">
+                <p class="logo-current-app">
+                    <i class="fa-solid fa-shapes" style="color: #ffffff;"></i>
+                </p>
+                <p class="name-current-app">
+                    App name
+                </p>
+            </button>
+        </div>
+        <div class="central-components-section">
+            <button class="notifications-panel-button">
+                <p class="date-current">11 de jul</p>
+                <p class="hour-current">11:29</p>
+            </button>
+        </div>
+        <div class="right-components-section">
+            <button class="setting-button">
+                <i class="fa-solid fa-network-wired" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-volume-high" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-power-off" style="color: #ffffff;"></i>
+            </button>
+        </div>
+        <div class="notifications-container">
+            <div class="notification-panel">
+                <div class="notification-left-panel">
+                    <div class="scroll-section-panel"></div>
+                    <div class="options-left-notifications">
+                        <div class="do-not-disturb-section">
+                            <p class="subtitle-do-not-disturb">Do Not Disturb</p>
+                            <input type="checkbox" name="switch-disturb" id="switch">
+                            <label for="switch" class="switch-section"></label>
+                        </div>
+                        <div class="clear-section">
+                            <button class="clear-notifications">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-right-panel">
+                    <div class="current-day"></div>
+                    <div class="calendar-notification"></div>
+                    <div class="events-container"></div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="off-screen"></div>
+
+    <div class="lock-screen one"></div>
+
+    <div class="lock-screen two"></div>
+
+    <div class="users-screen"></div>
+
+    <div class="on-screen active">
         <div class="screen-container"></div>
         <div class="menu-bar">
             <div class="favorite-apps-section"></div>
@@ -65,6 +94,10 @@
         </div>
     </div>
 
+    <div class="menu-apps">
+
+    </div>
+
     <!--SCRIPTS-->
     <script src="https://kit.fontawesome.com/29c1e4f1ef.js" crossorigin="anonymous"></script>
     <script src="/js/menuBar.js"></script>
@@ -78,6 +111,7 @@
         menubar.addApp()
         let currentDate = new CurrentDate();
     </script>
+    <script src="/js/TopPanel.js"></script>
 </body>
 
 </html>
