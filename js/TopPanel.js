@@ -4,6 +4,8 @@ const notificationsContainer = document.querySelector('.notifications-container'
 const currentAppButton = document.querySelector('.current-app-button')
 
 const settingsButton = document.querySelector('.setting-button')
+const toggleDoNotDisturb = document.querySelector('.switch-section')
+const iconDoNotDisturb = document.querySelector('.icon-do-not-disturb')
 
 const disabledScreen = document.querySelector('.disabled-screen')
 
@@ -35,9 +37,17 @@ const noNotifications = "<div class='no-notifications-panel'><img src='/assets/i
 const scrollPanelNotifications = document.querySelector('.scroll-section-panel')
 
 function addNotifications() {
-    if (notificationsArray.length == 0) {
+    /*if (notificationsArray.length == 0) {
         scrollPanelNotifications.innerHTML = noNotifications
-    }
+    }*/
 }
+
+function disableNotifications() {
+    iconDoNotDisturb.classList.toggle('active')
+}
+
+toggleDoNotDisturb.addEventListener('click', () => {
+    disableNotifications()
+})
 
 addNotifications()

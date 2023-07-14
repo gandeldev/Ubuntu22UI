@@ -92,6 +92,7 @@ body {
     width: 100%;
     height: 100%;
     grid-area: center;
+    gap: 10px;
 }
 
 .notifications-container {
@@ -132,9 +133,7 @@ body {
     "notifications-panel"
     "options-left-notifications"
     ;
-    overflow: hidden;
     border-right: 1px solid #3c3a3a;
-    padding: 0 10px 10px 0;
 }
 
 .options-left-notifications {
@@ -147,8 +146,20 @@ body {
 
 .scroll-section-panel {
     grid-area: notifications-panel;
-    width: 100%;
+    width: 400px;
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.scroll-section-panel::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scroll-section-panel::-webkit-scrollbar-thumb {
+    background-color: #3c3a3a;
+    height: 100%;
+
 }
 
 .no-notifications-panel {
@@ -233,12 +244,73 @@ body {
     transition: all 0.5s;
 }
 
+.icon-do-not-disturb {
+    opacity: 0;
+}
+
 .do-not-disturb-section > input[type='checkbox']:checked + .switch-section::after {
     transform: translateX(30px);
 }
 
 .do-not-disturb-section > input[type='checkbox']:checked + .switch-section {
     background-color: #7200d6;
+}
+
+.icon-do-not-disturb.active {
+    opacity: 1;
+}
+
+/*BUBBLE NOTIFICATION*/
+.notification-bubble-section {
+    width: 390px;
+    height: 80px;
+    background-color: #2f2f2f;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-areas: 
+    "cover-notification text-notification button-notification"
+    ;
+    overflow: hidden;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.notification-bubble-section:hover {
+    background-color: #3c3c3c;
+}
+
+.cover-notification {
+    grid-area: cover-notification;
+    width: 100%;
+    height: 100%;
+}
+
+.text-notification-section {
+    grid-area: text-notification;
+}
+
+.delete-button-notification-section {
+    grid-area: button-notification;
+    width: 100%;
+    height: 100%;
+}
+
+.delete-notification-button {
+    width: 25px;
+    height: 25px;
+    background-color: #4f4f4f;
+    border-radius: 50%;
+    border: none;
+}
+
+.delete-notification-button:hover {
+    background-color: #727272;
+}
+
+.delete-notification-button > img {
+    width: 100%;
+    height: 100%;
 }
 
 /*RIGHT COMPONENTS*/
